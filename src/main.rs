@@ -57,11 +57,11 @@ struct Model {
 }
 
 fn normal_density(x: f64, mean: f64, stdev: f64) -> f64 {
-    return -((x - mean)*(x - mean)) / (2.0 * stdev * stdev) + (1.0 / stdev).ln()
+    -((x - mean)*(x - mean)) / (2.0 * stdev * stdev) + (1.0 / stdev).ln()
 }
 
 fn half_normal_density(x: f64, stdev: f64) -> f64 {
-    return -(x*x) / (2.0 * stdev * stdev) + (1.0 / stdev).ln()
+    -(x*x) / (2.0 * stdev * stdev) + (1.0 / stdev).ln()
 }
 
 impl Model {
